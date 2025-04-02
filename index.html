@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anioły - Rękodzieło</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .search-box {
+            transition: width 0.3s ease-in-out, opacity 0.3s;
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            right: 40px;
+        }
+        .search-box.active {
+            width: 200px;
+            opacity: 1;
+        }
+        .nav-link {
+            cursor: pointer;
+            transition: border-bottom 0.2s;
+        }
+        .nav-link:hover {
+            border-bottom: 2px solid white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <nav class="sticky-nav flex justify-between items-center p-4">
+        <div class="text-xl font-bold">Rękodzieło</div>
+        <div class="flex items-center gap-4">
+            <div class="relative flex items-center">
+                <input type="text" placeholder="Szukaj produktu" 
+                       class="search-box p-1 border rounded-md text-sm text-black">
+                <img src="lupa.png" alt="Szukaj" class="w-6 h-6 cursor-pointer ml-2" onclick="toggleSearch()">
+            </div>
+            <span class="nav-link">Zaloguj</span>
+            <span class="nav-link">Rejestracja</span>
+        </div>
+    </nav>
+    
+    <script>
+        function toggleSearch() {
+            let searchBox = document.querySelector('.search-box');
+            searchBox.classList.toggle('active');
+        }
+    </script>
+    
+    <div class="mt-16 p-8">
+        <h2 class="text-2xl font-bold text-center mb-4">Anioły</h2>
+        <div class="text-center mb-8 text-gray-600">Piękne ręcznie wykonane anioły - idealne na prezent!</div>
+        
+        <div class="grid grid-cols-5 gap-6">
+            <script>
+                const anioły = [
+                    { nazwa: "Ikona Matki Boskiej z Dzieciątkiem.", cena: "500 zł", id: "i1" },
+                    { nazwa: "Piękny anioł - idealny na prezent. Dostępny", cena: "300 zł", id: "i2", link: "aniol2.html" },
+                    { nazwa: "Anioł - idealny na piękny i niepowtarzalny prezent", cena: "350 zł", id: "i3" },
+                    { nazwa: "Anioł do zawieszenia na ścianie - syrena", cena: "250 zł", id: "i4" },
+                    { nazwa: "Anioł powertex- na spersonalizowany prezent", cena: "250 zł", id: "i5" },
+                    { nazwa: "Anioł powertex. Idealny na prezent - dostępny", cena: "250 zł", id: "i6" },
+                    { nazwa: "Anioł- Westa - idealny na prezent - dostępny", cena: "300 zł", id: "i7" },
+                    { nazwa: "Anioł kremowo-złoty", cena: "250 zł", id: "i8" },
+                    { nazwa: "Anioł - rzeźba - idealny na prezent", cena: "350 zł", id: "i9" },
+                    { nazwa: "Anioł - rękodzieło z ręcznie malowanym wzorem", cena: "250 zł", id: "i10" },
+                    { nazwa: "Anioł na prezent - rzeźba", cena: "250 zł", id: "i11" },
+                    { nazwa: "Anioł - powertex - idealny na prezent- rękodzieło", cena: "250 zł", id: "i12" },
+                    { nazwa: "Anioł na prezent - dostępny", cena: "350 zł", id: "i13" },
+                    { nazwa: "Anioł powertex- rękodzieło- idealny na prezent", cena: "200 zł", id: "i14" }
+                ];
+
+                anioły.forEach(aniol => {
+                    document.write(`
+                        <div class="bg-white p-4 shadow rounded-md text-center">
+                            <a href="${aniol.link ? aniol.link : '#'}">
+                                <img src="gfx/${aniol.id}.jpg" alt="${aniol.nazwa}" class="w-full h-48 object-cover rounded">
+                                <p class="mt-2">${aniol.nazwa}</p>
+                                <p class="font-bold">${aniol.cena}</p>
+                            </a>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
