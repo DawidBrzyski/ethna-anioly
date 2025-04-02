@@ -38,7 +38,7 @@
     </style>
 </head>
 <body class="bg-gray-100 p-8">
-    <nav class="sticky-nav flex justify-between items-center p-4">
+    <nav class="sticky-nav flex justify-between items-center p-4 w-full">
         <div class="text-xl font-bold">Rękodzieło</div>
         <div class="flex items-center gap-4">
             <div class="relative flex items-center">
@@ -82,16 +82,16 @@
                 ];
 
                 anioły.forEach(aniol => {
-                    document.write(`
-                        <div class="bg-white p-4 shadow rounded-md text-center">
-                            <a href="${aniol.link ? aniol.link : '#'}">
-                                <img src="gfx/${aniol.id}.jpg" alt="${aniol.nazwa}" class="w-full h-48 object-cover rounded">
-                                <p class="mt-2">${aniol.nazwa}</p>
-                                <p class="font-bold">${aniol.cena}</p>
-                            </a>
-                        </div>
-                    `);
-                });
+    document.write(`
+        <div class="bg-white p-4 shadow rounded-md text-center">
+            <a href="aniol.html?id=i2">
+                <img src="gfx/${aniol.id}.jpg" alt="${aniol.nazwa}" class="w-full h-48 object-cover rounded">
+                <p class="mt-2">${aniol.nazwa}</p>
+                <p class="font-bold">${aniol.cena}</p>
+            </a>
+        </div>
+    `);
+});
             </script>
         </div>
     </div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anioł</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="aniol.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="nazwa"></h1>
+        <div class="gallery">
+            <button id="prev" class="gallery-btn">&#10094;</button>
+            <img id="anioł-img" src="" alt="Anioł">
+            <button id="next" class="gallery-btn">&#10095;</button>
+        </div>
+        <div class="details">
+            <p><strong>Oferta od:</strong> osoba prywatna</p>
+            <p><strong>Stan:</strong> nowe</p>
+            <p><strong>Metoda:</strong> utwardzanie tkanin</p>
+            <p><strong>Kolory:</strong> turkus, biel, błękit, granat, złoto</p>
+            <p><strong>Koszty przesyłki:</strong> 20 zł</p>
+            <p class="cena"><strong>Cena:</strong> <span id="cena"></span></p>
+        </div>
+        <div class="kontakt">
+            <h3>Skontaktuj się z ogłoszeniodawcą</h3>
+            <p><strong>Imię:</strong> <span id="imie"></span></p>
+            <p><strong>Telefon:</strong> <span id="telefon">*** *** ***</span> <button id="pokaz-numer">Pokaż numer</button></p>
+            <textarea id="wiadomosc" placeholder="Twoja wiadomość..."></textarea>
+            <button id="wyslij">Wyślij</button>
+        </div>
+    </div>
+</body>
+</html>
